@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "module": "esnext", //было es6, изменил из-за проблемы с динамическим импортом (в async чанках ) компонентов
+    "target": "es5",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "moduleResolution": "node",
+    // baseUrl для абсолютного импорта
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
