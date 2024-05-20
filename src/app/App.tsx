@@ -6,11 +6,6 @@ import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 import { Suspense, useEffect } from 'react';
 
-export enum Theme {
-  LIGHT = 'light',
-  DARK = 'dark',
-}
-
 const App = () => {
   const { theme } = useTheme();
   return (

@@ -1,4 +1,5 @@
 import { classNames } from './classNames';
+//import { classNames } from 'shared/lib/classNames/classNames';
 
 describe('classNames', () => {
   test('only one first parametr', () => {
@@ -27,6 +28,7 @@ describe('classNames', () => {
   test('widt mods undefined', () => {
     const expected = 'someClass class1 class2 hovered';
     expect(
+      //@ts-ignore пришлось вставить из-за scrollable:undefined
       classNames('someClass', { hovered: true, scrollable: undefined }, ['class1', 'class2']),
     ).toBe(expected);
   });
