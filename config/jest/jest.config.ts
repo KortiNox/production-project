@@ -1,4 +1,4 @@
-import path from 'path';
+import path from "path";
 /**
  * For a detailed explanation regarding each configuration property, visit:
  * https://jestjs.io/docs/configuration
@@ -14,27 +14,41 @@ export default {
   // The directory where Jest should store its cached dependency information
   // cacheDirectory: "C:\\Users\\User\\AppData\\Local\\Temp\\jest",
 
+  // A set of global variables that need to be available in all test environments
+  globals: {
+    __IS_DEV__: true,
+  },
+
   // Automatically clear mock calls, instances, contexts and results before every test
   clearMocks: true,
-  testEnvironment: 'jsdom',
+  testEnvironment: "jsdom",
   // An array of regexp pattern strings used to skip coverage collection
-  coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
+  coveragePathIgnorePatterns: ["\\\\node_modules\\\\"],
 
   // An array of directory names to be searched recursively up from the requiring module's location
-  moduleDirectories: ['node_modules'],
-  modulePaths: ['<rootDir>src'],
+  moduleDirectories: ["node_modules"],
+  modulePaths: ["<rootDir>src"],
 
   // An array of file extensions your modules use
-  moduleFileExtensions: ['js', 'mjs', 'cjs', 'jsx', 'ts', 'tsx', 'json', 'node'],
+  moduleFileExtensions: [
+    "js",
+    "mjs",
+    "cjs",
+    "jsx",
+    "ts",
+    "tsx",
+    "json",
+    "node",
+  ],
 
-  rootDir: '../../',
-  setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
+  rootDir: "../../",
+  setupFilesAfterEnv: ["<rootDir>config/jest/setupTests.ts"],
   // The glob patterns Jest uses to detect test files
-  testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
+  testMatch: ["<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)"],
 
   moduleNameMapper: {
-    '\\.(s?css)$': 'identity-obj-proxy',
-    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+    "\\.(s?css)$": "identity-obj-proxy",
+    "\\.svg": path.resolve(__dirname, "jestEmptyComponent.tsx"),
   },
 
   // Indicates whether the coverage information should be collected while executing the test
