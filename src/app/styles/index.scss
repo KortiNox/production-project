@@ -1,11 +1,10 @@
-@import 'reset';
-@import 'variables/global.scss';
-@import 'themes/normal.scss';
-@import 'themes/dark.scss';
+@import "reset";
+@import "variables/global.scss";
+@import "themes/normal.scss";
+@import "themes/dark.scss";
 
-body {
-  font-size: var(--font-m);
-
+.body {
+  font: var(--font-m);
   color: var(--primary-color);
 }
 

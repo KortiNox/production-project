@@ -1,7 +1,8 @@
-import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './Modal.module.scss';
-import { Portal } from '../Portal/Portal';
+import { ReactNode, useCallback, useEffect, useRef, useState } from "react";
+import { classNames } from "shared/lib/classNames/classNames";
+import cls from "./Modal.module.scss";
+import { Portal } from "../Portal/Portal";
+import { useTheme } from "app/providers/ThemeProvider";
 
 interface ModalProps {
   className?: string;
@@ -17,6 +18,7 @@ export const Modal = (props: ModalProps) => {
 
   const [isClosing, setIsClosing] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout>>(); //получаем тип,который возвращает функция
+  const { theme } = useTheme();
 
   const closeHandler = useCallback(() => {
     if (onClose) {
@@ -30,11 +32,11 @@ export const Modal = (props: ModalProps) => {
 
   const onKeyDown = useCallback(
     (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
+      if (e.key === "Escape") {
         closeHandler();
       }
     },
-    [closeHandler],
+    [closeHandler]
   );
 
   const onContentClick = (e: React.MouseEvent) => {
@@ -43,11 +45,11 @@ export const Modal = (props: ModalProps) => {
 
   useEffect(() => {
     if (isOpen) {
-      window.addEventListener('keydown', onKeyDown);
+      window.addEventListener("keydown", onKeyDown);
     }
     return () => {
       clearTimeout(timerRef.current);
-      window.removeEventListener('keydown', onKeyDown);
+      window.removeEventListener("keydown", onKeyDown);
     };
   }, [isOpen, onKeyDown]);
 
@@ -64,7 +66,7 @@ export const Modal = (props: ModalProps) => {
             {children}
           </div>
         </div>
-      </div>{' '}
+      </div>{" "}
     </Portal>
   );
 };
