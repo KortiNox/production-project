@@ -1,16 +1,17 @@
 import { BugButton } from "app/providers/ErrorBoundary";
 import { Counter } from "entities/Counter";
 import { useTranslation } from "react-i18next";
+import { Input } from "shared/ui/Input/Input";
+import { useState } from "react";
 
 const MainPage = () => {
   const { t } = useTranslation();
-  return (
-    <div>
-      <BugButton />
-      {t("Главная страница")}
-      <Counter />
-    </div>
-  );
+
+  const [value, setValue] = useState(" ");
+  const onChange = (val: string) => {
+    setValue(val);
+  };
+  return <div>{t("Главная страница")}</div>;
 };
 
 export default MainPage;
