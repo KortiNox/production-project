@@ -10,7 +10,8 @@
     "build:dev": "webpack --env mode=development",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",

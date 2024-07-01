@@ -1,14 +1,14 @@
-import { Preview } from '@storybook/react';
-import { StyleDecorator } from '../src/shared/config/storybook/StyleDecorator/StyleDecorator';
+import { Preview } from "@storybook/react";
+import { StyleDecorator } from "../src/shared/config/storybook/StyleDecorator/StyleDecorator";
 
 const preview: Preview = {
   parameters: {
     backgrounds: {
-      default: 'dark',
+      default: "light",
       values: [
         {
-          name: 'dark',
-          value: '#15171D',
+          name: "light",
+          value: "#f0f0f0",
         },
       ],
     },
