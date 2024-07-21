@@ -6,5 +6,10 @@
   "Страница не найдена": "Page not found",
   "Короткий язык": "En",
   "Главная": "Main",
-  "О сайте": "About"
+  "О сайте": "About",
+  "Войти": "Log in",
+  "Введите username": "Username",
+  "Введите пароль": "Password",
+  "Форма авторизации": "Auth form",
+  "Неверный логин или пароль": "Uncorrect username of password"
 }
